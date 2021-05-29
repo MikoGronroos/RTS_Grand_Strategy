@@ -1,0 +1,14 @@
+{
+    "CountryID": "USA",
+    "ThisCountryColor": {
+        "R": 15,
+        "G": 18,
+        "B": 45
+    },
+    "CountryFlagPath": "Interface/Flags/US_Flag",
+	"WarSupport": 14,
+	"Stability": 79,
+	"ResearchSlots": 4,
+	"NationStartingResearch": [
+	]
+}

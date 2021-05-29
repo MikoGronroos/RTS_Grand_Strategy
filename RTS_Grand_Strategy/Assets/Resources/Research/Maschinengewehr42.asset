@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd16342715b22ce49abc4005af5cde93, type: 3}
+  m_Name: Maschinengewehr42
+  m_EditorClassIdentifier: 
+  ResearchName: Maschinengewehr42
+  Folder: 0
+  Icon: {fileID: 0}
+  Position: {x: 0, y: 90}
+  ResearchCost: 0
+  NextResearch: {fileID: 0}
+  ThisEquipment: {fileID: 11400000, guid: 853243c82795ea44eb33730a5b3504f1, type: 2}
+  IsAvailable: 0

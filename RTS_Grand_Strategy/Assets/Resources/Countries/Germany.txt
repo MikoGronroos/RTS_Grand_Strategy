@@ -1,0 +1,17 @@
+{
+    "CountryID": "GER",
+    "ThisCountryColor": {
+        "R": 221,
+        "G": 0,
+        "B": 0
+    },
+    "CountryFlagPath": "Interface/Flags/GER_Flag",
+	"WarSupport": 30,
+	"Stability": 76,
+	"ResearchSlots": 4,
+	"NationStartingResearch": [
+		"Panzerkampfwagen4",
+		"Maschinengewehr42",
+		"OpelBlitz"
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"StateName": "Pohjois-Pohjanmaa",
+	"StateOwnerID":"USA",
+	"StateCoreID": "USA",
+	"StateID": 2,
+	"Manpower": 50102,
+	"Provinces": 
+	[
+		1, 2
+	]
+}

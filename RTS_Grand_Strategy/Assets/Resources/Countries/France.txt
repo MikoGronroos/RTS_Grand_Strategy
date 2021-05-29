@@ -1,0 +1,14 @@
+{
+    "CountryID": "FRA",
+    "ThisCountryColor": {
+        "R": 90,
+        "G": 90,
+        "B": 90
+    },
+    "CountryFlagPath": "Interface/Flags/FRA_Flag",
+	"WarSupport": 12,
+	"Stability": 46,
+	"ResearchSlots": 4,
+	"NationStartingResearch": [
+	]
+}

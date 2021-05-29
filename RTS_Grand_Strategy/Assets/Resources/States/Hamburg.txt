@@ -1,0 +1,11 @@
+{
+	"StateName": "Hamburg",
+	"StateOwnerID":"GER",
+	"StateCoreID": "GER",
+	"StateID": 3,
+	"Manpower": 1841000,
+	"Provinces": 
+	[
+		5, 3, 4
+	]
+}

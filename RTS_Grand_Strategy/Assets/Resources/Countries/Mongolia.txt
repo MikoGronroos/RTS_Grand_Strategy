@@ -1,0 +1,14 @@
+{
+    "CountryID": "MON",
+    "ThisCountryColor": {
+        "R": 157,
+        "G": 11,
+        "B": 213
+    },
+    "CountryFlagPath": "Interface/Flags/MON_Flag",
+	"WarSupport": 46,
+	"Stability": 27,
+	"ResearchSlots": 2,
+	"NationStartingResearch": [
+	]
+}

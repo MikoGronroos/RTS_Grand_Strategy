@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6620939154876610176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6620939154876610177}
+  - component: {fileID: 6620939154876610178}
+  - component: {fileID: -1355505139420661344}
+  - component: {fileID: 6620939154876610180}
+  - component: {fileID: 8413693409555717700}
+  - component: {fileID: 4297053452066036835}
+  - component: {fileID: -7416737471937358299}
+  - component: {fileID: 438566907948709629}
+  - component: {fileID: -3224721886286183494}
+  m_Layer: 0
+  m_Name: NationProfile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6620939154876610177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620939154876610176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6620939154876610178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620939154876610176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa9e46bf9c604643a424fba8ede1686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisNation:
+    CountryID: 
+    ThisCountryColor:
+      R: 0
+      G: 0
+      B: 0
+    CountryFlagPath: 
+    CountryFlag: {fileID: 0}
+    WarSupport: 0
+    Stability: 0
+    ResearchSlots: 0
+    NationStartingResearch: []
+  localPlayer: 0
+  nationProvinces: []
+  nationStates: []
+  onWarSupportChanged: {fileID: 11400000, guid: 872664b4e37c72f49a6f41ef41629684, type: 2}
+  onStabilityChanged: {fileID: 11400000, guid: 3c728bd7dd12b0d41adc457f578e7468, type: 2}
+  nationAgreements: []
+--- !u!114 &-1355505139420661344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620939154876610176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4345803094f0f8f459ab4e60f64a4c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPoliticalPower: 0
+  politicalPowerGain: 2
+  onPoliticalPowerChanged: {fileID: 11400000, guid: 56228c991f2845a4b92dc7974e185cf8, type: 2}
+  _profile: {fileID: 0}
+--- !u!114 &6620939154876610180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620939154876610176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079429fa5351c6641ba86a1c9878e573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nationsDivisions: []
+  nationsAllowedProvinces: []
+--- !u!114 &8413693409555717700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620939154876610176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3938af763238cc47a6c6fac51721a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stockpile: []
+  onStockpileCreated: {fileID: 11400000, guid: 9325f8cb1603e424c9358867b0dca853, type: 2}
+  onAddedToStockpile: {fileID: 11400000, guid: c4063b36432e5a94d82a7060ca60a649, type: 2}
+--- !u!114 &4297053452066036835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620939154876610176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf77957866ebf645be8a5d3f296647c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableInfantryEquipment: []
+  availableArmoredEquipment: []
+  availableAirEquipment: []
+  availableNavalEquipment: []
+  nationProductionLines: []
+--- !u!114 &-7416737471937358299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620939154876610176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa973cf878f9d94d9cfb649b7f60dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coreManpower: 0
+  noncoreManpower: 0
+  monthlyPopulationGrowth: 0
+  coreRecruitablePopulationFactor: 0.03
+  noncoreRecruitablePopulationFactor: 0.002
+  recruitablePopulation: 0
+--- !u!114 &438566907948709629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620939154876610176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddaf5629883fb224e9cbeb58713251e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nationsResearch: []
+  completedResearch: []
+--- !u!114 &-3224721886286183494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620939154876610176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0751a2d5652a5740bc73e5c945c4747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 38ec5c3cf9eec2d4faae4c895dbc30dc, type: 2}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7416737471937358299}
+        m_TargetAssemblyTypeName: NationManpower, Assembly-CSharp
+        m_MethodName: OnStatesInitializedListener
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

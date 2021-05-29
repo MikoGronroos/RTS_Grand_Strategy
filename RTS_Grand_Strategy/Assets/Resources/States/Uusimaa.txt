@@ -1,0 +1,11 @@
+{
+	"StateName": "Uusimaa",
+	"StateOwnerID":"ENG",
+	"StateCoreID": "ENG",
+	"StateID": 1,
+	"Manpower": 120000,
+	"Provinces": 
+	[
+		9, 8, 7, 6
+	]
+}

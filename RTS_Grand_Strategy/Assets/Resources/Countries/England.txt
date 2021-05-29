@@ -1,0 +1,15 @@
+{
+    "CountryID": "ENG",
+    "ThisCountryColor": {
+        "R": 20,
+        "G": 49,
+        "B": 1
+    },
+    "CountryFlagPath": "Interface/Flags/ENG_Flag",
+	"WarSupport": 21,
+	"Stability": 78,
+	"ResearchSlots": 4,
+	"NationStartingResearch": [
+		"OpelBlitz"
+	]
+}

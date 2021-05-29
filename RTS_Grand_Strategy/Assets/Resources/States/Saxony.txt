@@ -1,0 +1,11 @@
+{
+	"StateName": "Saxony",
+	"StateOwnerID":"GER",
+	"StateCoreID":"USA",
+	"StateID": 4,
+	"Manpower": 4078000,
+	"Provinces": 
+	[
+		10
+	]
+}

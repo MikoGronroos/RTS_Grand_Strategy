@@ -1,0 +1,59 @@
+﻿public enum ResearchFolder
+{
+    Infantry,
+    Support,
+    LandDoctrine,
+    NavalDoctrine,
+    Naval,
+    AirDoctrine,
+    Air,
+    Industry,
+    Technology
+}
+
+public enum UnitCategory
+{
+    category_tanks,
+    category_light_infantry,
+    category_front_line,
+    category_all_infantry,
+    category_support_battalions,
+    category_all_armor,
+    category_army,
+    category_line_artillery,
+    category_artillery,
+    category_fighter,
+    category_heavy_fighter,
+    category_cas,
+    category_special_forces,
+    category_nav_bomber,
+    category_tac_bomber,
+    category_strat_bomber,
+    category_scout_plane,
+    category_recon
+}
+
+public enum UnitType
+{
+    infantry,
+    support,
+    artillery,
+    anti_tank,
+    anti_air,
+    armor,
+    fighter,
+    cas,
+    naval_bomber,
+    interceptor,
+    suicide,
+    tactical_bomber,
+    strategic_bomber,
+    air_transport,
+    missile,
+    submarine,
+    screen_ship,
+    capital_ship,
+    carrier,
+    motorized,
+    mechanized
+}
