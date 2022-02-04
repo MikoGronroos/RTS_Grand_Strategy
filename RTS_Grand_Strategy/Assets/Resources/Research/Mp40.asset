@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd16342715b22ce49abc4005af5cde93, type: 3}
+  m_Name: Mp40
+  m_EditorClassIdentifier: 
+  ResearchName: Mp40
+  Folder: 0
+  Icon: {fileID: 21300000, guid: 60768cf6af63ecb42bf676f88d2d767c, type: 3}
+  Position: {x: 0, y: 0}
+  ResearchTimeInDays: 0
+  NextResearch: {fileID: 0}
+  ThisEquipment: {fileID: 11400000, guid: ae7c7eddf3cd79c4c864a0a00f789566, type: 2}

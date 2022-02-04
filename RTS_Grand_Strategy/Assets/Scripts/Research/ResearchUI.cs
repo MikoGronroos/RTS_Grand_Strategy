@@ -30,9 +30,12 @@ public class ResearchUI : MonoBehaviour
             Destroy(slot);
         }
 
+        currentSlots.Clear();
+
         for (int i = 0; i < research.GetAmountOfResearchSlots(); i++)
         {
             GameObject newSlot = Instantiate(researchSlotPrefab, researchSlotParent);
+            currentSlots.Add(newSlot);
         }
     }
 

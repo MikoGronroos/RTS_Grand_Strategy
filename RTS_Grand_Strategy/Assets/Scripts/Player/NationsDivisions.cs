@@ -6,7 +6,7 @@ public class NationsDivisions : MonoBehaviour
 
     [SerializeField] private List<DivisionHolder> nationsDivisions = new List<DivisionHolder>();
 
-    [SerializeField] private List<ProvinceHolder> nationsAllowedProvinces = new List<ProvinceHolder>();
+    [SerializeField] private List<string> nationsIdsThatAreAllowedToMoveTo = new List<string>();
 
     public void AddToNationsDivisionsList(DivisionHolder division)
     {
@@ -16,22 +16,17 @@ public class NationsDivisions : MonoBehaviour
         }
     }
 
-    public void AddAllowedProvince(ProvinceHolder holder)
+    public void AddNationIdToMovementList(string id)
     {
-        nationsAllowedProvinces.Add(holder);
-    }
-
-    public void AddListToAllowedProvinces(List<ProvinceHolder> holder)
-    {
-        foreach (var province in holder)
+        if (!nationsIdsThatAreAllowedToMoveTo.Contains(id))
         {
-            nationsAllowedProvinces.Add(province);
+            nationsIdsThatAreAllowedToMoveTo.Add(id);
         }
     }
 
-    public bool IfProvinceIsAllowed(ProvinceHolder holder)
+    public bool IfProvinceIsAllowed(string id)
     {
-        return nationsAllowedProvinces.Contains(holder);
+        return nationsIdsThatAreAllowedToMoveTo.Contains(id);
     }
 
 }

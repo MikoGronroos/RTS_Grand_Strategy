@@ -27,18 +27,33 @@ public class CombatManager : MonoBehaviour
 
     public void StartNewCombat(ProvinceHolder holder, DivisionHolder attackerHolder)
     {
-        Combat combatInstance = new Combat();
-        combatInstance.JoinCombatAsDefenderWithList(holder.GetProvinceDivisions().GetDivisionHolders());
-        combatInstance.JoinCombatAsAttacker(attackerHolder);
-        holder.GetProvinceCombat().SetOnGoingCombat(combatInstance);
-        AddOnGoingCombatToList(combatInstance);
+        Combat newCombatInstance = new Combat();
+        newCombatInstance.JoinCombatAsDefenderWithList(holder.GetProvinceDivisions().GetDivisionHolders());
+        newCombatInstance.JoinCombatAsAttacker(attackerHolder);
+        holder.GetProvinceCombat().SetOnGoingCombat(newCombatInstance);
+        newCombatInstance.StartCombat();
+        Debug.Log($"Created New Combat {newCombatInstance.ToString()}");
+        AddOnGoingCombatToList(newCombatInstance);
     }
 
-    public void AddOnGoingCombatToList(Combat combat)
+    private void AddOnGoingCombatToList(Combat combat)
     {
         if (!onGoingCombats.Contains(combat))
         {
             onGoingCombats.Add(combat);
         }
     }
+
+    public void RemoveCombatFromListWithId(string id)
+    {
+        foreach (var combat in onGoingCombats)
+        {
+            if (combat.CombatId.Equals(id))
+            {
+                onGoingCombats.Remove(combat);
+                return;
+            }
+        }
+    }
+
 }

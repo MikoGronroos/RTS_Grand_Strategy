@@ -43,9 +43,10 @@ public class PoliticsSystem : MonoBehaviour
     {
 
         int id = GameEventHub.AcceptedAgreement.Id;
+        string targetId = GameEventHub.AcceptedAgreement.TargetNationId;
 
-        var firstNation = _playersManager.GetNationProfile();
-        var secondNation = NationProfileManager.GetNationProfile(_countrySelection.GetSelectedCountryID());
+        var firstNation = _playersManager.GetLocalNationProfile();
+        var secondNation = NationProfileManager.GetNationProfile(targetId);
 
         Agreement newAgreement = (Agreement)ScriptableObject.CreateInstance(GetAgreementByID(id).name);
         newAgreement.CreateAgreement(firstNation, secondNation);

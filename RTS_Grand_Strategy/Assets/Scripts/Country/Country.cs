@@ -27,6 +27,8 @@ public class Country
 
     public string[] NationStartingResearch;
 
+    public string[] NationStartingBuildingTypes;
+
     public Color GetCountryColor()
     {
         return new Color(ThisCountryColor.R / 255.0f, ThisCountryColor.G / 255.0f, ThisCountryColor.B / 255.0f, 1);

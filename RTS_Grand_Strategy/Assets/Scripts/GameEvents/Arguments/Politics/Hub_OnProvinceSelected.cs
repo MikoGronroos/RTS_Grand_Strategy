@@ -4,7 +4,7 @@ public class Hub_OnProvinceSelected
 {
 
     public NationProfile SelectedProfile;
-    public NationProfile ForeignClaimsProfile;
+    public string[] ForeignClaimProfileIds;
     public Province SelectedProvince;
     public SpriteRenderer Renderer;
 

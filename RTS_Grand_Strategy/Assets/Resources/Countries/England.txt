@@ -11,5 +11,7 @@
 	"ResearchSlots": 4,
 	"NationStartingResearch": [
 		"OpelBlitz"
+	],
+    "NationStartingBuildingTypes": [
 	]
 }

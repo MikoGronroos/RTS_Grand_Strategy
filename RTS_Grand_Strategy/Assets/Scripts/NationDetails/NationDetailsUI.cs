@@ -2,8 +2,12 @@
 using UnityEngine.UI;
 using TMPro;
 
-public class PoliticsSystemUI : MonoBehaviour
+public class NationDetailsUI : MonoBehaviour
 {
+
+    [Header("Panels")]
+
+    [SerializeField] private GameObject nationDetailsPanel;
 
     [SerializeField] private GameObject diplomacyPanel;
     [SerializeField] private GameObject detailsPanel;
@@ -20,6 +24,8 @@ public class PoliticsSystemUI : MonoBehaviour
     [SerializeField] private Button closeVerificationPanelButton;
     [SerializeField] private Button acceptVerificationButton;
 
+    [SerializeField] private Button closeNationDetailsPanel;
+
     [Header("Politics Available Marks")]
 
     [SerializeField] private TextMeshProUGUI[] marks;
@@ -29,11 +35,19 @@ public class PoliticsSystemUI : MonoBehaviour
     [SerializeField] private Color availableColor;
     [SerializeField] private Color notAvailableColor;
 
-    [Header("Events")]
-
-    [SerializeField] private GameEvent onAcceptedAgreement;
-
     private int _amountOfAgreements;
+
+    private NationDetails _nationDetails;
+
+    private void Awake()
+    {
+        _nationDetails = GetComponent<NationDetails>();
+
+        closeNationDetailsPanel.onClick.AddListener(() => {
+            ToggleNationDetailsPanel(false);
+        });
+
+    }
 
     public void OnPoliticsSystemActivated()
     {
@@ -64,10 +78,26 @@ public class PoliticsSystemUI : MonoBehaviour
 
     }
 
+    public void NationDetailToggleListener()
+    {
+
+        bool value = GameEventHub.OnNationDetailToggle.ToggleValue;
+
+        DrawPoliticAgreements();
+
+        ToggleNationDetailsPanel(value);
+
+    }
+
+    private void ToggleNationDetailsPanel(bool value)
+    {
+        nationDetailsPanel.SetActive(value);
+    }
+
     private void DrawPoliticAgreements()
     {
 
-        var profile = GameEventHub.ProvinceSelected.SelectedProfile;
+        var profile = NationProfileManager.GetNationProfile(GameEventHub.OnNationDetailToggle.NationId);
         var localProfile = GameEventHub.LocalNationChanged.Profile;
 
         for (int i = 0; i < _amountOfAgreements; i++)
@@ -99,9 +129,9 @@ public class PoliticsSystemUI : MonoBehaviour
     {
         agreementVerificationPanel.SetActive(true);
         acceptVerificationButton.onClick.AddListener(() => {
-            AcceptVerification(id);
+            _nationDetails.AcceptVerification(id);
+            CloseAgreementVerificationPanel();
             DrawPoliticAgreements();
-            acceptVerificationButton.onClick.RemoveAllListeners();
         });
     }
 
@@ -109,16 +139,6 @@ public class PoliticsSystemUI : MonoBehaviour
     {
         agreementVerificationPanel.SetActive(false);
         acceptVerificationButton.onClick.RemoveAllListeners();
-    }
-
-    private void AcceptVerification(int type)
-    {
-
-        GameEventHub.AcceptedAgreement.Id = type;
-
-        onAcceptedAgreement?.Invoke();
-
-        agreementVerificationPanel.SetActive(false);
     }
 
 }

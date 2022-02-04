@@ -24,7 +24,7 @@ public class ProvinceSelection : MonoBehaviour
             selectedProvince = province;
         }
         GameEventHub.ProvinceSelected.SelectedProfile = NationProfileManager.GetNationProfile(province.ProvinceOwnerID);
-        GameEventHub.ProvinceSelected.ForeignClaimsProfile = NationProfileManager.GetNationProfile(StatesDictionary.GetStateFromDictionary(province.ProvinceStateID).StateCoreID);
+        GameEventHub.ProvinceSelected.ForeignClaimProfileIds = province.coreNationIds;
         GameEventHub.ProvinceSelected.SelectedProvince = selectedProvince;
         GameEventHub.ProvinceSelected.Renderer = renderer;
 

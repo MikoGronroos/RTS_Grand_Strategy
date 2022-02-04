@@ -10,5 +10,7 @@
 	"Stability": 46,
 	"ResearchSlots": 4,
 	"NationStartingResearch": [
+	],
+    "NationStartingBuildingTypes": [
 	]
 }

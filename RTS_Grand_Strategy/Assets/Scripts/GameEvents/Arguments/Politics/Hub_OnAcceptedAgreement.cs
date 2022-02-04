@@ -2,5 +2,6 @@
 {
 
     public int Id;
+    public string TargetNationId;
 
 }

@@ -51,7 +51,11 @@ public class Selector : MonoBehaviour
 
             Collider2D[] colliders =  Physics2D.OverlapAreaAll(startPosition, MikoUtils.GetMouseWorldPosition());
 
-            selectedDivisions.Clear();
+            if (!Input.GetKey(KeyCode.LeftShift))
+            {
+                selectedDivisions.Clear();
+            }
+
             foreach (Collider2D collider in colliders)
             {
                 DivisionHolder holder = collider.GetComponent<DivisionHolder>();
@@ -61,7 +65,10 @@ public class Selector : MonoBehaviour
 
                     if (_playersManager.GetLocalPlayerNationID() == holder.GetDivisionOwnerID())
                     {
-                        selectedDivisions.Add(holder);
+                        if (!selectedDivisions.Contains(holder))
+                        {
+                            selectedDivisions.Add(holder);
+                        }
                     }
                 }
             }

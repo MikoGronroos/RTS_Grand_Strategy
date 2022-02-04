@@ -45,7 +45,7 @@ public class PlayersManager : MonoBehaviour
         return localPlayerProfile.GetNation().CountryID;
     }
 
-    public NationProfile GetNationProfile()
+    public NationProfile GetLocalNationProfile()
     {
         return localPlayerProfile;
     }

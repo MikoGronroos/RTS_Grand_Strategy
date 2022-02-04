@@ -12,6 +12,10 @@
 	"NationStartingResearch": [
 		"Panzerkampfwagen4",
 		"Maschinengewehr42",
-		"OpelBlitz"
+		"OpelBlitz",
+		"Mp40"
+	],
+	"NationStartingBuildingTypes": [
+		"Market"
 	]
 }

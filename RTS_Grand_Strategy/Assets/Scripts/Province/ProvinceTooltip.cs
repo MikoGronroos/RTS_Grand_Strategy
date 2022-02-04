@@ -14,7 +14,7 @@ public class ProvinceTooltip : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (!_playersManager.GetNationProfile().GetNationsDivisions().IfProvinceIsAllowed(_provinceHolder))
+        if (!_playersManager.GetLocalNationProfile().GetNationsDivisions().IfProvinceIsAllowed(_provinceHolder.ThisProvince.ProvinceOwnerID))
         {
             CursorManager.ChangeCursor("NotAllowedCursor");
         }

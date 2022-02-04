@@ -25,19 +25,20 @@ public class NationProduction : MonoBehaviour
         }
     }
 
+    private void InitStockpile(ProductionLine productionLine)
+    {
+        TimeSystem.OnDayChanged += productionLine.CreateNewEquipment;
+        productionLine.Id = Random.Range(0, 9999999);
+        _productionUI.ProductionLineCreated(productionLine, RemoveFromProductionListWithId);
+        productionLine.SetNationStockpile(_nationStockpile);
+    }
+
+
     public void CreateNewProductionLine(Equipment equipment)
     {
         ProductionLine newLine = new ProductionLine(equipment, 0.10f, 1f);
         InitStockpile(newLine);
         nationProductionLines.Add(newLine);
-    }
-
-    private void InitStockpile(ProductionLine productionLine)
-    {
-        TimeSystem.OnDayChanged += productionLine.CreateNewEquipment;
-        productionLine.Id = Random.Range(0,9999999);
-        _productionUI.ProductionLineCreated(productionLine, RemoveFromProductionListWithId);
-        productionLine.SetNationStockpile(_nationStockpile);
     }
 
     public void AddNewAvailableEquipment(Equipment equipment)

@@ -10,7 +10,7 @@ public class ResearchItem : ClickableUI
     {
 
         GameEventHub.ResearchSlotClicked.ThisResearchSlot.ChangeResearch(thisResearch);
-        PlayersManager.Instance.GetNationProfile().GetNationResearch().AddToNationResearch(thisResearch);
+        PlayersManager.Instance.GetLocalNationProfile().GetNationResearch().AddToNationResearch(thisResearch);
 
     }
 

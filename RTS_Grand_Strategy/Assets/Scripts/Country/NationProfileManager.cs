@@ -30,7 +30,7 @@ public class NationProfileManager : MonoBehaviour
 
         GameObject nationParent = new GameObject();
 
-        nationParent.name = "nationParent";
+        nationParent.name = "nationProfileParent";
 
         nationParent.transform.position = Vector3.zero;
 
@@ -40,6 +40,7 @@ public class NationProfileManager : MonoBehaviour
             NationProfile profile = nationObject.GetComponent<NationProfile>();
             profile.SetNation(nation);
             profile.name = $"{nation.CountryID} profile";
+            profile.GetNationsDivisions().AddNationIdToMovementList(profile.GetNation().CountryID);
             nationObject.transform.SetParent(nationParent.transform);
             nationProfiles.Add(profile);
         }

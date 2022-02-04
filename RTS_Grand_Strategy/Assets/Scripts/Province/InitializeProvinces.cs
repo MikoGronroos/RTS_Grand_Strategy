@@ -35,7 +35,9 @@ public class InitializeProvinces : MonoBehaviour
             float x = float.Parse(dataSplit[5]);
             float y = float.Parse(dataSplit[6]);
 
-            ProvinceData newData = new ProvinceData(firstColor, id, type, x, y);
+            string[] coreNationIdsSplit = dataSplit[7].Split(',');
+
+            ProvinceData newData = new ProvinceData(firstColor, id, type, x, y, coreNationIdsSplit);
 
             provinceData.Add(newData);
         }
@@ -55,6 +57,7 @@ public class InitializeProvinces : MonoBehaviour
                     var holder = province.Value.GetComponent<ProvinceHolder>();
                     holder.ThisProvince.ProvinceId = provinceData[i].ProvinceID;
                     holder.SetMovementPointPos(provinceData[i].MovementPosition);
+                    holder.ThisProvince.coreNationIds = provinceData[i].coreNationIds;
                 }
             }
         }

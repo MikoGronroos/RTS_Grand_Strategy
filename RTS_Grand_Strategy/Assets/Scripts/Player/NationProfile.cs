@@ -28,6 +28,7 @@ public class NationProfile : MonoBehaviour
     private NationProduction _nationProduction;
     private NationResearch _nationResearch;
     private NationStockpile _nationStockpile;
+    private NationBuildings _nationBuildings;
 
     public bool LocalPlayer
     {
@@ -52,6 +53,7 @@ public class NationProfile : MonoBehaviour
         _nationsDivisions = GetComponent<NationsDivisions>();
         _politicalSystem = GetComponent<NationPolitics>();
         _nationProduction = GetComponent<NationProduction>();
+        _nationBuildings = GetComponent<NationBuildings>();
     }
 
     public void SetStability(float value)
@@ -130,6 +132,11 @@ public class NationProfile : MonoBehaviour
     public NationStockpile GetNationStockpile()
     {
         return _nationStockpile;
+    }
+
+    public NationBuildings GetNationBuildings()
+    {
+        return _nationBuildings;
     }
 
     public List<ProvinceHolder> GetNationProvinces()

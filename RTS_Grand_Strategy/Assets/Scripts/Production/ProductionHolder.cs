@@ -30,7 +30,7 @@ public class ProductionHolder : ClickableUI
     public override void OnUIClicked(PointerEventData eventData)
     {
 
-        _playersManager.GetNationProfile().GetNationProduction().CreateNewProductionLine(CurrentEquipment);
+        _playersManager.GetLocalNationProfile().GetNationProduction().CreateNewProductionLine(CurrentEquipment);
 
     }
 }

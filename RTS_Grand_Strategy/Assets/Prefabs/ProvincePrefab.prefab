@@ -105,6 +105,7 @@ MonoBehaviour:
     ProvinceStateID: 0
     ProvinceName: 
     ProvinceId: 0
+    coreNationIds: []
   _movementPosition: {x: 0, y: 0}
 --- !u!114 &6481924643575625234
 MonoBehaviour:
@@ -143,12 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fc1fca0fda7794f8ef35626ade3599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onGoingCombat:
-    combatName: 
-    attackerParticipants: []
-    defenderParticipants: []
-    attackerReserves: []
-    defenderReserves: []
 --- !u!1 &7882469234336623449
 GameObject:
   m_ObjectHideFlags: 0

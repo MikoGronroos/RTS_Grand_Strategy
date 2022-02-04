@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4297053452066036835}
   - component: {fileID: -7416737471937358299}
   - component: {fileID: 438566907948709629}
+  - component: {fileID: 816747622714228367}
   - component: {fileID: -3224721886286183494}
   m_Layer: 0
   m_Name: NationProfile
@@ -62,12 +63,14 @@ MonoBehaviour:
     Stability: 0
     ResearchSlots: 0
     NationStartingResearch: []
+    NationStartingBuildingTypes: []
   localPlayer: 0
   nationProvinces: []
   nationStates: []
   onWarSupportChanged: {fileID: 11400000, guid: 872664b4e37c72f49a6f41ef41629684, type: 2}
   onStabilityChanged: {fileID: 11400000, guid: 3c728bd7dd12b0d41adc457f578e7468, type: 2}
   nationAgreements: []
+  wars: []
 --- !u!114 &-1355505139420661344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nationsDivisions: []
-  nationsAllowedProvinces: []
+  nationsIdsThatAreAllowedToMoveTo: []
 --- !u!114 &8413693409555717700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +165,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nationsResearch: []
   completedResearch: []
+--- !u!114 &816747622714228367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620939154876610176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9a60699adc1f14db5ff3099020e470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-3224721886286183494
 MonoBehaviour:
   m_ObjectHideFlags: 0

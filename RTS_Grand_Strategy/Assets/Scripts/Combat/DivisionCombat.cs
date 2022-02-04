@@ -16,8 +16,13 @@ public class DivisionCombat : MonoBehaviour
     {
         if (!holder.GetProvinceCombat().ProvinceIsInCombat())
         {
-            CombatManager.Instance.StartNewCombat(holder, _holder);
-            IsInCombat = true;
+            Debug.Log("Province is not in combat");
+            if (NationProfileManager.GetNationProfile(_holder.GetDivisionOwnerID()).HasWarWithNationID(holder.ThisProvince.ProvinceOwnerID))
+            {
+                Debug.Log("Started Combat");
+                CombatManager.Instance.StartNewCombat(holder, _holder);
+                IsInCombat = true;
+            }
         }
         else
         {
@@ -49,7 +54,11 @@ public class DivisionCombat : MonoBehaviour
 
     public void ConquerNewProvince(ProvinceHolder holder)
     {
-        ConquerProvince.Conquer(holder, _holder.GetDivisionOwnerID());
+        //Check if province owner is at war with division owner
+        if (NationProfileManager.GetNationProfile(_holder.GetDivisionOwnerID()).HasWarWithNationID(holder.ThisProvince.ProvinceOwnerID))
+        {
+            ConquerProvince.Conquer(holder, _holder.GetDivisionOwnerID());
+        }
     }
 
 }

@@ -14,6 +14,12 @@ public class Combat
     [SerializeField] private List<DivisionHolder> attackerReserves = new List<DivisionHolder>();
     [SerializeField] private List<DivisionHolder> defenderReserves = new List<DivisionHolder>();
 
+    [SerializeField] private float averageDefenderOrg;
+    [SerializeField] private float averageAttackerOrg;
+
+    [SerializeField] private float averageDefenderDamage;
+    [SerializeField] private float averageAttackerDamage;
+
     private HashSet<string> attackerNationIds = new HashSet<string>();
     private HashSet<string> defenderNationIds = new HashSet<string>();
 
@@ -23,6 +29,61 @@ public class Combat
     {
         CombatId = Guid.NewGuid().ToString();
     }
+
+    #region Combat Start And Stop
+
+    public void StartCombat()
+    {
+        TimeSystem.OnDayChanged += CombatDay;
+        averageDefenderOrg = CombatCalculations.AverageOrganization(defenderParticipants);
+        averageAttackerOrg = CombatCalculations.AverageOrganization(attackerParticipants);
+
+        averageDefenderDamage = CombatCalculations.AverageDamage(defenderParticipants);
+        averageAttackerDamage = CombatCalculations.AverageDamage(attackerParticipants);
+    }
+
+    public void StopCombat()
+    {
+        TimeSystem.OnDayChanged -= CombatDay;
+        CombatManager.Instance.RemoveCombatFromListWithId(CombatId);
+    }
+
+    #endregion
+
+    #region Combat
+
+    private void CombatDay()
+    {
+
+        Debug.Log($"attacker organization is {averageAttackerOrg}");
+        Debug.Log($"defender organization is {averageDefenderOrg}");
+
+        averageAttackerOrg -= averageDefenderDamage;
+        averageDefenderOrg -= averageAttackerDamage;
+
+        if (CheckIfCombatEnds())
+        {
+            StopCombat();
+        }
+
+    }
+
+    private bool CheckIfCombatEnds()
+    {
+        if (attackerParticipants.Count == 0 || defenderParticipants.Count == 0)
+        {
+            return true;
+        }
+        if (averageDefenderOrg == 0 || averageAttackerOrg == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    #endregion
+
+    #region Join Or Leave
 
     public void JoinCombatAsAttacker(DivisionHolder holder)
     {
@@ -72,6 +133,7 @@ public class Combat
         if (attackerParticipants.Contains(holder))
         {
             attackerParticipants.Remove(holder);
+            CheckIfCombatEnds();
         }
     }
 
@@ -80,6 +142,7 @@ public class Combat
         if (defenderParticipants.Contains(holder))
         {
             defenderParticipants.Remove(holder);
+            CheckIfCombatEnds();
         }
     }
 
@@ -90,6 +153,8 @@ public class Combat
             attackerReserves.Add(holder);
         }
     }
+
+    #endregion
 
     public void SetCombatName(string name)
     {
@@ -104,6 +169,11 @@ public class Combat
     public bool IsDefender(string id)
     {
         return defenderNationIds.Contains(id);
+    }
+
+    public string ToString()
+    {
+        return $"{CombatId}";
     }
 
 }

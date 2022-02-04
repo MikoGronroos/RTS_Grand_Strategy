@@ -6,4 +6,6 @@
         "B": 0
     },
     "CountryFlagPath": ""
+    "NationStartingBuildingTypes": [
+	]
 }

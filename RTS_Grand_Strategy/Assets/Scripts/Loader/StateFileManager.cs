@@ -33,7 +33,6 @@ public class StateFileManager : MonoBehaviour
                 var province = ProvinceDictionary.GetProvinceFromDictionary(state.Provinces[i]);
                 province.SetOwner(state.StateOwnerID);
                 nationProfile.AddProvinceToNation(province);
-                nationProfile.GetNationsDivisions().AddAllowedProvince(province);
                 province.ThisProvince.ProvinceStateID = state.StateID;
             }
             nationProfile.AddStateToNation(state);

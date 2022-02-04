@@ -10,7 +10,7 @@ public class ReadBitmap : MonoBehaviour
 
     [SerializeField] private List<Sprite> sprites = new List<Sprite>();
 
-    [SerializeField] private Transform spritesParent;
+    [SerializeField] private GameObject spritesParent;
 
     [SerializeField] private GameEvent onProvincesCreatedEvent;
 
@@ -76,7 +76,7 @@ public class ReadBitmap : MonoBehaviour
 
             sprite.transform.position = new Vector3(sprite.transform.position.x, sprite.transform.position.y, 0.5f);
 
-            sprite.transform.SetParent(spritesParent);
+            sprite.transform.SetParent(spritesParent.transform);
 
             sprites.Add(finalSprite);
             spriteObjects.Add(texture.Key, sprite);

@@ -19,11 +19,13 @@ public class PoliticsUI : MonoBehaviour
     [SerializeField] private Button logisticsButton;
     [SerializeField] private Button industyButton;
     [SerializeField] private Button decisionButton;
+    [SerializeField] private Button recruitButton;
     [SerializeField] private Button exitProductionButton;
     [SerializeField] private Button exitResearchButton;
     [SerializeField] private Button exitLogisticsButton;
     [SerializeField] private Button exitIndustryButton;
     [SerializeField] private Button exitDecisionButton;
+    [SerializeField] private Button exitRecruitButton;
 
     private int _currentlyOpenPanelIndex = 0;
 
@@ -36,16 +38,20 @@ public class PoliticsUI : MonoBehaviour
         exitLogisticsButton.onClick.AddListener(CloseAllPanels);
         exitIndustryButton.onClick.AddListener(CloseAllPanels);
         exitDecisionButton.onClick.AddListener(CloseAllPanels);
+        exitRecruitButton.onClick.AddListener(CloseAllPanels);
 
         productionButton.onClick.AddListener(()=> {
             OpenPanelWithIndex(1);
         });
+
         researchButton.onClick.AddListener(() => {
             OpenPanelWithIndex(2);
         });
+
         logisticsButton.onClick.AddListener(() => {
             OpenPanelWithIndex(3);
         });
+
         industyButton.onClick.AddListener(() => {
             OpenPanelWithIndex(4);
         });
@@ -53,6 +59,11 @@ public class PoliticsUI : MonoBehaviour
         decisionButton.onClick.AddListener(() => {
             OpenPanelWithIndex(5);
         });
+
+        recruitButton.onClick.AddListener(() => {
+            OpenPanelWithIndex(6);
+        });
+
     }
 
     private void ChangeNationInfo(float politicalPower, float stability, float warSupport)

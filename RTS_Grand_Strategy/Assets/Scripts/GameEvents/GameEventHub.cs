@@ -45,4 +45,10 @@
 
     #endregion
 
+    #region Nation Details
+
+    public static Hub_OnNationDetailToggle OnNationDetailToggle = new Hub_OnNationDetailToggle();
+
+    #endregion
+
 }

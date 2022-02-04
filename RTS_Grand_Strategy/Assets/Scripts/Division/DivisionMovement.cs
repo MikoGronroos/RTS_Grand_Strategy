@@ -30,14 +30,6 @@ public class DivisionMovement : MonoBehaviour
 
         if (route.Count <= 0) return;
 
-        if (currentHolder != null)
-        {
-            if (_divisionCombat.IsInCombat)
-            {
-                _divisionCombat.LeaveCombat(currentHolder);
-            }
-        }
-
         CheckNewProvince(route[routeIndex]);
 
         Vector3 lookAtGoal = new Vector3(route[routeIndex].GetMovementPoint().position.x, route[routeIndex].GetMovementPoint().position.y, 0);
@@ -71,13 +63,10 @@ public class DivisionMovement : MonoBehaviour
         {
             if (CheckProvince.CheckForEnemyDivisions(holder, _divisionHolder.GetDivisionOwnerID()))
             {
+                Debug.Log("Enemy division foreseen!");
                 _divisionCombat.CombatCheck(holder);
                 currentHolder = holder;
                 return;
-            }
-            else
-            {
-                _divisionCombat.CombatCheck(holder);
             }
         }
     }

@@ -6,8 +6,6 @@ public class ProvinceDictionary : MonoBehaviour
 
     private static Dictionary<int, ProvinceHolder> allProvinces = new Dictionary<int, ProvinceHolder>();
 
-    [SerializeField] private List<ProvinceHolder> provincesList = new List<ProvinceHolder>();
-
     [SerializeField] private GameEvent onProvincesLoaded;
 
     public void LoadProvinces()

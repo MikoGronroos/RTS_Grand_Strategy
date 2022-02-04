@@ -26,7 +26,7 @@ public class MoveDivision : MonoBehaviour
             {
                 if (hit.transform.TryGetComponent(out ProvinceHolder holder))
                 {
-                    if (_playersManager.GetNationProfile().GetNationsDivisions().IfProvinceIsAllowed(holder))
+                    if (_playersManager.GetLocalNationProfile().GetNationsDivisions().IfProvinceIsAllowed(holder.ThisProvince.ProvinceOwnerID))
                     {
                         List<ProvinceHolder> route = new List<ProvinceHolder>();
                         route.Add(holder);

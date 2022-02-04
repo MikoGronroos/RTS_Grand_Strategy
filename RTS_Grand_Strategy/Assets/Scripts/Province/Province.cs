@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class Province
@@ -21,6 +22,15 @@ public class Province
         {
             provinceOwnerID = value;
         }
+    }
+
+    public string[] coreNationIds;
+
+    public List<BuildingType> ProvinceBuildings = new List<BuildingType>();
+
+    public bool ProvinceHasBuilding(BuildingType type)
+    {
+        return ProvinceBuildings.Contains(type);
     }
 
 }
